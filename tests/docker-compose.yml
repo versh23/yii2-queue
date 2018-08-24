@@ -29,6 +29,8 @@ services:
       BEANSTALK_HOST: beanstalk
       GEARMAN_HOST: gearmand
       COMPOSER_ALLOW_SUPERUSER: 1
+      GEARMAN_PORT: 4730
+      ACTIVEMQ_HOST: activemq
     depends_on: &php_depends_on
     - mysql
     - postgres
@@ -36,6 +38,7 @@ services:
     - rabbitmq
     - beanstalk
     - gearmand
+    - activemq
     networks:
       net: {}
   php71:
@@ -126,6 +129,14 @@ services:
     image: artefactual/gearmand
     ports:
     - 4731:4730
+    networks:
+      net: {}
+
+  #  https://hub.docker.com/r/webcenter/activemq/
+  activemq:
+    image: webcenter/activemq
+    ports:
+      - 61613:61613
     networks:
       net: {}
 
