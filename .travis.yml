@@ -20,6 +20,7 @@ services:
   - postgresql
   - redis-server
   - rabbitmq
+  - docker
 
 # cache vendor dirs
 cache:
@@ -32,6 +33,8 @@ before_install:
   - sudo beanstalkd -v
   - sudo service beanstalkd start
   - pecl install igbinary
+  - docker pull webcenter/activemq
+  - docker run -d -p 61613:61613 webcenter/activemq
 
 install:
   - travis_retry composer self-update && composer --version
