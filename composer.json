@@ -23,14 +23,14 @@
     "require-dev": {
         "yiisoft/yii2-redis": "*",
         "php-amqplib/php-amqplib": "*",
-        "enqueue/amqp-lib": "^0.8",
+        "enqueue/amqp-lib": "dev-master",
         "pda/pheanstalk": "*",
         "jeremeamia/superclosure": "*",
         "yiisoft/yii2-debug": "*",
         "yiisoft/yii2-gii": "*",
         "phpunit/phpunit": "~4.4",
         "aws/aws-sdk-php": ">=2.4",
-        "enqueue/stomp": "^0.8.27"
+        "enqueue/stomp": "dev-master"
     },
     "suggest": {
         "ext-pcntl": "Need for process signals.",
@@ -72,5 +72,7 @@
             "type": "composer",
             "url": "https://asset-packagist.org"
         }
-    ]
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
